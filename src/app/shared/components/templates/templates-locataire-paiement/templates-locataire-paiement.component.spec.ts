@@ -4,17 +4,19 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TemplatesLocatairePaiementComponent } from './templates-locataire-paiement.component';
+import { SharedTestingModule } from '@core/testing/shared.testing.module.spec';
+import { OrganismesModalPaiementModule } from '@organismes/organismes-modal-paiement/organismes-modal-paiement.module';
 
 describe('TemplatesLocatairePaiementComponent', () => {
   let component: TemplatesLocatairePaiementComponent;
   let fixture: ComponentFixture<TemplatesLocatairePaiementComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TemplatesLocatairePaiementComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TemplatesLocatairePaiementComponent],
+      imports: [SharedTestingModule, OrganismesModalPaiementModule],
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TemplatesLocatairePaiementComponent);

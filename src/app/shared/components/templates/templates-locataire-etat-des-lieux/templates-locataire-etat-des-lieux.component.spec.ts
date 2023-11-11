@@ -4,17 +4,20 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TemplatesLocataireEtatDesLieuxComponent } from './templates-locataire-etat-des-lieux.component';
+import { SharedTestingModule } from '@core/testing/shared.testing.module.spec';
+import { MoleculesDatePickerModule } from '../../molecules/molecules-datePicker/molecules-datePicker.module';
+import { FormsModule } from '@angular/forms';
 
 describe('TemplatesLocataireEtatDesLieuxComponent', () => {
   let component: TemplatesLocataireEtatDesLieuxComponent;
   let fixture: ComponentFixture<TemplatesLocataireEtatDesLieuxComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TemplatesLocataireEtatDesLieuxComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TemplatesLocataireEtatDesLieuxComponent],
+      imports: [SharedTestingModule, MoleculesDatePickerModule, FormsModule],
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TemplatesLocataireEtatDesLieuxComponent);
