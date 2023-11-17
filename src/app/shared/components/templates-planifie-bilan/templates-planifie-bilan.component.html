@@ -1,0 +1,32 @@
+<nz-spin [nzSpinning]="loading">
+  <form nz-form [formGroup]="planifieForm">
+    <div>
+      <span class="input-value">
+        <molecules-input
+          longueur="330"
+          placeholder="Email"
+          required
+          formControlName="email"
+          id="email"
+          (focusout)="testEmail()"
+        ></molecules-input>
+      </span>
+    </div>
+    <div nz-row *ngIf="emailIncorrecte" class="red">
+      <label>l'email est invalide</label>
+    </div>
+    <div>
+      <molecules-datePicker
+        formControlName="dateAcquisition"
+        longueur="200"
+        placeholder="Date d'acquisition"
+        format="dd/MM/yyyy"
+      ></molecules-datePicker>
+    </div>
+    <div>
+      <div style="text-align: center">
+        <button type="button" class="button-styled-green button-styled" (click)="close()">Valider</button>
+      </div>
+    </div>
+  </form>
+</nz-spin>
